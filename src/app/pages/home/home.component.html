@@ -1,6 +1,15 @@
 <div class="home">
-  <app-carousel #carousel [activeIndex]="carouselActiveIndex">
-    <nz-carousel nzAutoPlay nzEffect="fade" [nzDotRender]="carousel.dotRef" (nzBeforeChange)="onBeforeChange($event)">
+  <app-carousel
+    #carousel
+    [activeIndex]="carouselActiveIndex"
+    (changeSlide)="onChangeSlide($event)"
+  >
+    <nz-carousel
+      nzAutoPlay
+      nzEffect="fade"
+      [nzDotRender]="carousel.dotRef"
+      (nzBeforeChange)="onBeforeChange($event)"
+    >
       <div
         nz-carousel-content
         class="carousel-item"
