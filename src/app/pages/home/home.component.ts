@@ -8,6 +8,7 @@ import { Banner } from "src/app/services/data-types/common.types";
   styleUrls: ["./home.component.less"]
 })
 export class HomeComponent implements OnInit {
+  carouselActiveIndex = 0;
   banners: Banner[];
   constructor(private homeService: HomeService) {
     this.homeService.getBanners().subscribe(banners => {
@@ -16,4 +17,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onBeforeChange({to}) {
+    this.carouselActiveIndex = to;
+
+  }
 }

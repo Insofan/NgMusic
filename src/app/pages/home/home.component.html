@@ -1,6 +1,6 @@
 <div class="home">
-  <div class="carousel wrap">
-    <nz-carousel nzAutoPlay nzEffect="fade">
+  <app-carousel #carousel [activeIndex]="carouselActiveIndex">
+    <nz-carousel nzAutoPlay nzEffect="fade" [nzDotRender]="carousel.dotRef" (nzBeforeChange)="onBeforeChange($event)">
       <div
         nz-carousel-content
         class="carousel-item"
@@ -11,5 +11,5 @@
         </a>
       </div>
     </nz-carousel>
-  </div>
+  </app-carousel>
 </div>
