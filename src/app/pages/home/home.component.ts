@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
 
   private getEnterSinger() {
     this.singerService.getEnterSinger().subscribe(singers => {
-      // this.singers = singers;
+      this.singers = singers;
     });
   }
 

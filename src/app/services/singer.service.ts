@@ -34,6 +34,6 @@ export class SingerService {
     });
     return this.http
       .get(this.uri + "artist/list")
-      .pipe(map((res: { artists: Singer[] }) => res.artists));
+      .pipe(map((res: { artists: Singer[] }) => res.artists.slice(0, 6)));
   }
 }
