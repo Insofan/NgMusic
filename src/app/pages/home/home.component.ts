@@ -3,9 +3,11 @@ import { HomeService } from "src/app/services/home.service";
 import {
   Banner,
   HotTag,
-  SongSheet
+  SongSheet,
+  Singer
 } from "src/app/services/data-types/common.types";
 import { NzCarouselComponent } from "ng-zorro-antd";
+import { SingerService } from 'src/app/services/singer.service';
 
 @Component({
   selector: "app-home",
@@ -17,19 +19,21 @@ export class HomeComponent implements OnInit {
   banners: Banner[];
   hotTags: HotTag[];
   songSheetList: SongSheet[];
+  singers: Singer[];
 
   @ViewChild(NzCarouselComponent, { static: true })
   private nzCarousel: NzCarouselComponent;
 
-  constructor(private homeService: HomeService) {
+  constructor(private homeService: HomeService,
+    private singerService: SingerService) {
     this.getBanners();
     this.getHotTags();
     this.getPersonalizedSheetList();
+    this.getEnterSinger();
   }
 
   private getBanners() {
     this.homeService.getBanners().subscribe(banners => {
-      console.log(banners);
       this.banners = banners;
     });
   }
@@ -43,6 +47,12 @@ export class HomeComponent implements OnInit {
   private getPersonalizedSheetList() {
     this.homeService.getPersonalSheetlist().subscribe(sheets => {
       this.songSheetList = sheets;
+    });
+  }
+
+  private getEnterSinger() {
+    this.singerService.getEnterSinger().subscribe(singers => {
+      // this.singers = singers;
     });
   }
 

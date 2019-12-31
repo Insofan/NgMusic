@@ -33,7 +33,7 @@
                 <a>热门推荐</a>
               </h2>
               <nav>
-                <a *ngFor="let item of hotTags">{{item.name}}</a>
+                <a *ngFor="let item of hotTags">{{ item.name }}</a>
               </nav>
             </div>
             <a href="">
@@ -43,13 +43,29 @@
           </div>
           <div class="down">
             <div class="down-wrap">
-              <app-single-sheet class="sheet-item" *ngFor="let item of songSheetList" [sheet]="item">
+              <app-single-sheet
+                class="sheet-item"
+                *ngFor="let item of songSheetList"
+                [sheet]="item"
+              >
               </app-single-sheet>
             </div>
           </div>
         </div>
       </div>
-      <div class="right">right</div>
+      <div class="right">
+        <div class="member-card"></div>
+        <div class="settled-singler">
+          <div class="tit">
+            <b>入驻歌手</b>
+            <a>查看全部</a>
+            <!-- <i nz-icon type="arrow-right" theme="outline"></i> -->
+          </div>
+          <div class="list">
+            <div class="card" *ngFor="let item of list"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
