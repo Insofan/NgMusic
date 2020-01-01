@@ -1,0 +1,76 @@
+@import '../../../../assets/styles/varibles';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/flex-base.less';
+
+.bg {
+    width: 100%;
+    .container {
+        width: 980px;
+        height: 73px;
+        background-color: red;
+        margin: 0 auto;
+        .up {
+            height: 20px;
+            background-color: blue;
+        }
+        .down {
+            height: 53px;
+            .flex;
+            flex-direction: row;
+            .jc-c;
+            .left {
+                width: 137px;
+                height: 42px;
+                padding-top: 6px;
+                .flex;
+                .jc-fs;
+                .ai-c;
+                background: url('../../../../assets/images/playbar.png')
+                    no-repeat;
+                overflow: hidden;
+                .pre {
+                    background: url('../../../../assets/images/playbar.png')
+                        no-repeat;
+                    width: 28px;
+                    height: 28px;
+
+                    background-position: 0 -130px;
+                    &:hover {
+                        background-position: -30px -130px;
+                    }
+                }
+                .toggle {
+                    background: url('../../../../assets/images/playbar.png')
+                        no-repeat;
+                    width: 36px;
+                    height: 36px;
+                    background-position: -40px -204px;
+                    &:playing {
+                        background-position: 0 -165px;
+                    }
+                }
+                .next {
+                    background: url('../../../../assets/images/playbar.png')
+                        no-repeat;
+                    width: 28px;
+                    height: 28px;
+
+                    background-position: -80px -130px;
+                    &:hover {
+                        background-position: -110px -130px;
+                    }
+                }
+            }
+            .mid {
+                .flex;
+                .ai-c;
+                height: 47px;
+                .head {
+                    width: 35px;
+                    height: 35px;
+                    background-color: green;
+                }
+            }
+        }
+    }
+}
