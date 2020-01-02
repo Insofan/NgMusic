@@ -4,181 +4,208 @@
 
 .bg {
     width: 100%;
-    .lock {
-
-    }
-    .container {
-        width: 980px;
-        height: 73px;
-        background-color: @play-bg-color;
-        margin: 0 auto;
-        .up {
+    height: 73px;
+    .up {
+        width: 100%;
+        height: 20px;
+        .lock {
+            position: absolute;
+            z-index: 1;
+            right: 20px;
             height: 20px;
-            background-color: clear;
-        }
-
-        .down {
-            height: 53px;
-            .flex;
-            flex-direction: row;
-            .jc-c;
-            .left {
-                width: 137px;
-                height: 42px;
-                padding-top: 6px;
-                .flex;
-                .jc-fs;
-                .ai-c;
-                background: url('../../../../assets/images/playbar.png')
-                    no-repeat;
-                overflow: hidden;
-                .pre {
-                    background: url('../../../../assets/images/playbar.png')
-                        no-repeat;
-                    width: 28px;
-                    height: 28px;
-                    margin-right: 8px;
-
-                    background-position: 0 -130px;
-                    &:hover {
-                        background-position: -30px -130px;
-                    }
+            width: 52px;
+            background: url('../../../../assets/images/playbar.png') no-repeat;
+            background-position: 0 -380px;
+            i {
+                position: relative;
+                left: 15px;
+                top: 5px;
+                .icon('../images/playbar.png', 18px, 18px);
+                background-position: -80px -380px;
+                &:hover {
+                    background-position: -80px -400px;
                 }
-                .toggle {
-                    background: url('../../../../assets/images/playbar.png')
-                        no-repeat;
-                    width: 36px;
-                    height: 36px;
-                    background-position: -40px -204px;
-                    margin-right: 8px;
-
-                    &:playing {
-                        background-position: 0 -165px;
-                    }
-                }
-                .next {
-                    background: url('../../../../assets/images/playbar.png')
-                        no-repeat;
-                    width: 28px;
-                    height: 28px;
-                    margin-right: 8px;
-
-                    background-position: -80px -130px;
+                &.locked {
+                    background-position: -100px -380px;
                     &:hover {
-                        background-position: -110px -130px;
+                        background-position: -100px -400px;
                     }
                 }
             }
-            .mid {
-                position: relative;
-                height: 100%;
-                width: 620px;
-                margin: 0;
+        }
+    }
+    .container-wrap {
+        width: 100%;
+            background-color: @play-bg-color;
+        .container {
+            width: 980px;
+            height: 53px;
+            background-color: @play-bg-color;
+            margin: 0 auto;
+
+            .down {
+                height: 53px;
                 .flex;
-                .ai-c;
-                .head {
-                    align-self: start;
+                flex-direction: row;
+                .jc-c;
+                .left {
+                    width: 137px;
+                    height: 42px;
+                    padding-top: 6px;
+                    .flex;
+                    .jc-fs;
+                    .ai-c;
                     background: url('../../../../assets/images/playbar.png')
                         no-repeat;
-                    background-position: 0 -80px;
-                }
-                .play {
-                    flex-grow: 1;
-                    height: 100%;
-                    .flex;
-                    .jc-sb;
-                    flex-direction: column;
-                    .words {
+                    .pre {
+                        background: url('../../../../assets/images/playbar.png')
+                            no-repeat;
+                        width: 28px;
                         height: 28px;
-                        width: 100%;
-                        color: @white-color;
-                        min-height: 18px;
-                        text-shadow: 0 1px 0 @box-shadow-base;
-                        &.hide {
-                            visibility: hidden;
+                        margin-right: 8px;
+
+                        background-position: 0 -130px;
+                        &:hover {
+                            background-position: -30px -130px;
                         }
-                        p {
-                            float: left;
-                            max-width: 300px;
-                            margin-right: 10px;
-                            cursor: pointer;
+                    }
+                    .toggle {
+                        background: url('../../../../assets/images/playbar.png')
+                            no-repeat;
+                        width: 36px;
+                        height: 36px;
+                        background-position: -40px -204px;
+                        margin-right: 8px;
+
+                        &:playing {
+                            background-position: 0 -165px;
                         }
-                        .songs {
-                            float: left;
-                            list-style: none;
-                            li {
-                                margin-left: 6px;
+                    }
+                    .next {
+                        background: url('../../../../assets/images/playbar.png')
+                            no-repeat;
+                        width: 28px;
+                        height: 28px;
+                        margin-right: 8px;
+
+                        background-position: -80px -130px;
+                        &:hover {
+                            background-position: -110px -130px;
+                        }
+                    }
+                }
+                .mid {
+                    position: relative;
+                    height: 100%;
+                    width: 620px;
+                    margin: 0;
+                    .flex;
+                    .ai-c;
+                    .head {
+                        align-self: start;
+                        background: url('../../../../assets/images/playbar.png')
+                            no-repeat;
+                        background-position: 0 -80px;
+                    }
+                    .play {
+                        flex-grow: 1;
+                        height: 100%;
+                        .flex;
+                        .jc-sb;
+                        flex-direction: column;
+                        padding-top: 6px;
+                        .words {
+                            height: 28px;
+                            width: 100%;
+                            color: @white-color;
+                            min-height: 18px;
+                            text-shadow: 0 1px 0 @box-shadow-base;
+                            &.hide {
+                                visibility: hidden;
+                            }
+                            p {
                                 float: left;
+                                max-width: 300px;
+                                margin-right: 10px;
+                                cursor: pointer;
+                            }
+                            .songs {
+                                float: left;
+                                list-style: none;
+                                li {
+                                    margin-left: 6px;
+                                    float: left;
+                                }
+                            }
+                        }
+                        .bar {
+                            flex-grow: 1;
+                            .flex;
+                            flex-direction: row;
+                            .jc-sb;
+                            .progress {
+                                flex-grow: 1;
+                            }
+                            span {
+                                width: 76px;
+                                height: 14px;
+                                color: @white-color;
+                                font-size: 12px;
                             }
                         }
                     }
-                    .bar {
-                        flex-grow: 1;
-                        .flex;
-                        flex-direction: row;
-                        .jc-sb;
-                        .progress {
-                            flex-grow: 1;
+                }
+                .oper {
+                    width: 60px;
+                    i {
+                        margin: 11px 2px 0 0;
+                        .icon('../images/playbar.png', 25px, 25px);
+                        &.like {
+                            background-position: -88px -163px;
+                            &:hover {
+                                background-position: -88px -189px;
+                            }
                         }
-                        span {
-                            width: 76px;
-                            height: 14px;
-                            color: @white-color;
-                            font-size: 12px;
+                        &.share {
+                            background-position: -114px -163px;
+                            &:hover {
+                                background-position: -114px -189px;
+                            }
                         }
                     }
                 }
-            }
-            .oper {
-                width: 60px;
-                i {
-                    margin: 11px 2px 0 0;
-                    .icon('../images/playbar.png', 25px, 25px);
-                    &.like {
-                        background-position: -88px -163px;
-                        &:hover {
-                            background-position: -88px -189px;
+                .ctrl {
+                    position: relative;
+                    width: 113px;
+                    padding-left: 13px;
+                    i {
+                        margin: 11px 2px 0 0;
+                        .icon('../images/playbar.png', 25px, 25px);
+                        &.volume {
+                            background-position: -2px -248px;
+                            &:hover {
+                                background-position: -31px -248px;
+                            }
+                        }
+                        &.random {
+                            background-position: -66px -248px;
+                            &:hover {
+                                background-position: -93px -248px;
+                            }
+                        }
+                        &.loop {
+                            background-position: -3px -344px;
+                            &:hover {
+                                background-position: -33px -344px;
+                            }
+                        }
+                        &.singleLoop {
+                            background-position: -66px -344px;
+                            &:hover {
+                                background-position: -93px -344px;
+                            }
                         }
                     }
-                    &.share {
-                        background-position: -114px -163px;
-                        &:hover {
-                            background-position: -114px -189px;
-                        }
-                    }
-                }
-            }
-            .ctrl {
-                position: relative;
-                width: 113px;
-                padding-left: 13px;
-                i{
-                  margin: 11px 2px 0 0;
-                  .icon('../images/playbar.png', 25px, 25px);
-                  &.volume{
-                    background-position: -2px -248px;
-                    &:hover{
-                      background-position: -31px -248px;
-                    }
-                  }
-                  &.random{
-                    background-position: -66px -248px;
-                    &:hover{
-                      background-position: -93px -248px;
-                    }
-                  }
-                  &.loop{
-                    background-position: -3px -344px;
-                    &:hover{
-                      background-position: -33px -344px;
-                    }
-                  }
-                  &.singleLoop{
-                    background-position: -66px -344px;
-                    &:hover{
-                      background-position: -93px -344px;
-                    }
-                  }
                 }
             }
         }
