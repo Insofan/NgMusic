@@ -4,15 +4,19 @@
 
 .bg {
     width: 100%;
+    .lock {
+
+    }
     .container {
         width: 980px;
         height: 73px;
-        background-color: red;
+        background-color: @play-bg-color;
         margin: 0 auto;
         .up {
             height: 20px;
-            background-color: blue;
+            background-color: clear;
         }
+
         .down {
             height: 53px;
             .flex;
@@ -33,6 +37,7 @@
                         no-repeat;
                     width: 28px;
                     height: 28px;
+                    margin-right: 8px;
 
                     background-position: 0 -130px;
                     &:hover {
@@ -45,6 +50,8 @@
                     width: 36px;
                     height: 36px;
                     background-position: -40px -204px;
+                    margin-right: 8px;
+
                     &:playing {
                         background-position: 0 -165px;
                     }
@@ -54,6 +61,7 @@
                         no-repeat;
                     width: 28px;
                     height: 28px;
+                    margin-right: 8px;
 
                     background-position: -80px -130px;
                     &:hover {
@@ -62,13 +70,115 @@
                 }
             }
             .mid {
+                position: relative;
+                height: 100%;
+                width: 620px;
+                margin: 0;
                 .flex;
                 .ai-c;
-                height: 47px;
                 .head {
-                    width: 35px;
-                    height: 35px;
-                    background-color: green;
+                    align-self: start;
+                    background: url('../../../../assets/images/playbar.png')
+                        no-repeat;
+                    background-position: 0 -80px;
+                }
+                .play {
+                    flex-grow: 1;
+                    height: 100%;
+                    .flex;
+                    .jc-sb;
+                    flex-direction: column;
+                    .words {
+                        height: 28px;
+                        width: 100%;
+                        color: @white-color;
+                        min-height: 18px;
+                        text-shadow: 0 1px 0 @box-shadow-base;
+                        &.hide {
+                            visibility: hidden;
+                        }
+                        p {
+                            float: left;
+                            max-width: 300px;
+                            margin-right: 10px;
+                            cursor: pointer;
+                        }
+                        .songs {
+                            float: left;
+                            list-style: none;
+                            li {
+                                margin-left: 6px;
+                                float: left;
+                            }
+                        }
+                    }
+                    .bar {
+                        flex-grow: 1;
+                        .flex;
+                        flex-direction: row;
+                        .jc-sb;
+                        .progress {
+                            flex-grow: 1;
+                        }
+                        span {
+                            width: 76px;
+                            height: 14px;
+                            color: @white-color;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            .oper {
+                width: 60px;
+                i {
+                    margin: 11px 2px 0 0;
+                    .icon('../images/playbar.png', 25px, 25px);
+                    &.like {
+                        background-position: -88px -163px;
+                        &:hover {
+                            background-position: -88px -189px;
+                        }
+                    }
+                    &.share {
+                        background-position: -114px -163px;
+                        &:hover {
+                            background-position: -114px -189px;
+                        }
+                    }
+                }
+            }
+            .ctrl {
+                position: relative;
+                width: 113px;
+                padding-left: 13px;
+                i{
+                  margin: 11px 2px 0 0;
+                  .icon('../images/playbar.png', 25px, 25px);
+                  &.volume{
+                    background-position: -2px -248px;
+                    &:hover{
+                      background-position: -31px -248px;
+                    }
+                  }
+                  &.random{
+                    background-position: -66px -248px;
+                    &:hover{
+                      background-position: -93px -248px;
+                    }
+                  }
+                  &.loop{
+                    background-position: -3px -344px;
+                    &:hover{
+                      background-position: -33px -344px;
+                    }
+                  }
+                  &.singleLoop{
+                    background-position: -66px -344px;
+                    &:hover{
+                      background-position: -93px -344px;
+                    }
+                  }
                 }
             }
         }
