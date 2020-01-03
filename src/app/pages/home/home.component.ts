@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core'
-import { HomeService } from 'src/app/services/home.service'
 import {
     Banner,
     HotTag,
@@ -7,7 +6,6 @@ import {
     Singer
 } from 'src/app/services/data-types/common.types'
 import { NzCarouselComponent } from 'ng-zorro-antd'
-import { SingerService } from 'src/app/services/singer.service'
 import { ActivatedRoute } from '@angular/router'
 import { map } from 'rxjs/internal/operators'
 import { SheetService } from 'src/app/services/sheet.service'
