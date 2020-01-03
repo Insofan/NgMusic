@@ -51,8 +51,8 @@ export class HomeComponent implements OnInit {
     }
 
     onPlaySheet(id: number) {
-        this.sheetService.getSongSheetDetail(id).subscribe(songListSheet => {
-            console.log('sonsheet', songListSheet)
+        this.sheetService.playSheet(id).subscribe(songListSheet => {
+            console.log('song sheet res', songListSheet)
         })
     }
 }
